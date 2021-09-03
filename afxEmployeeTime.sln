@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{0A26455C-AE9B-41AC-9FCA-3DDC2D78BE2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "afxTimes", "afxTimes\afxTimes.csproj", "{245ECEC5-9556-4DD6-B9F8-45B9EB6843CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAapp", "QAapp\QAapp.csproj", "{A339D02E-2E97-4846-9EAA-494E9E9D72EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A26455C-AE9B-41AC-9FCA-3DDC2D78BE2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A26455C-AE9B-41AC-9FCA-3DDC2D78BE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A26455C-AE9B-41AC-9FCA-3DDC2D78BE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A26455C-AE9B-41AC-9FCA-3DDC2D78BE2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{245ECEC5-9556-4DD6-B9F8-45B9EB6843CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{245ECEC5-9556-4DD6-B9F8-45B9EB6843CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{245ECEC5-9556-4DD6-B9F8-45B9EB6843CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{245ECEC5-9556-4DD6-B9F8-45B9EB6843CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A339D02E-2E97-4846-9EAA-494E9E9D72EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A339D02E-2E97-4846-9EAA-494E9E9D72EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A339D02E-2E97-4846-9EAA-494E9E9D72EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A339D02E-2E97-4846-9EAA-494E9E9D72EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07E091AE-6536-4C59-84BC-72B62B350CAF}
+	EndGlobalSection
+EndGlobal
