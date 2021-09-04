@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{0A26455C-AE9B-41AC-9FCA-3DDC2D78BE2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "afx.Common", "Common\afx.Common.csproj", "{0A26455C-AE9B-41AC-9FCA-3DDC2D78BE2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "afxTimes", "afxTimes\afxTimes.csproj", "{245ECEC5-9556-4DD6-B9F8-45B9EB6843CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "afx.EmployesTime", "afxTimes\afx.EmployesTime.csproj", "{245ECEC5-9556-4DD6-B9F8-45B9EB6843CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QAapp", "QAapp\QAapp.csproj", "{A339D02E-2E97-4846-9EAA-494E9E9D72EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "afx.TestingApp", "QAapp\afx.TestingApp.csproj", "{A339D02E-2E97-4846-9EAA-494E9E9D72EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
