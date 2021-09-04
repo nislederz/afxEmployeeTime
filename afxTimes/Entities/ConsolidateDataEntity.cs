@@ -1,13 +1,12 @@
 ﻿using Microsoft.WindowsAzure.Storage.Table;
 using System;
 
-namespace afxTimes.Entities
+namespace afx.EmployesTime.Entities
 {
-    public class EmployeesTime : TableEntity
+    internal class ConsolidateDataEntity : TableEntity
     {
         public int IdEmployee { get; set; }
         public DateTime RegisterTime { get; set; }
-        public bool TypeOutput { get; set; }
-        public bool Consolidate { get; set; }
+        public int WorkMinutes { get; set; }
     }
 }
