@@ -300,5 +300,38 @@ namespace afx.EmployesTime.Functions
 
         }
 
+        [FunctionName(nameof(GetAllConsolidateByDate))]
+        public static async Task<IActionResult> GetAllConsolidateByDate(
+           [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "consolidateData/{date}")] HttpRequest req,
+           [Table("consolidateData", Connection = "AzureWebJobsStorage")] CloudTable consolidateTable,
+           string date,
+           ILogger log)
+        {
+            log.LogInformation($"Get all consolidate by date: {date}.");
+
+            string filterConsolidate = TableQuery.GenerateFilterConditionForDate("RegisterTime", QueryComparisons.Equal, DateTime.Parse(date));
+            TableQuery<ConsolidateDataEntity> queryConsolidate = new TableQuery<ConsolidateDataEntity>().Where(filterConsolidate);
+            TableQuerySegment<ConsolidateDataEntity> completedConsolidate = await consolidateTable.ExecuteQuerySegmentedAsync(queryConsolidate, null);
+
+            var consolidateData = completedConsolidate.Select(d => new
+            {
+                d.RowKey,
+                d.IdEmployee,
+                d.WorkMinutes
+            })
+           .Distinct()
+           .OrderBy(d => d.IdEmployee);
+
+            string message = $"Consolidate employees for the date: {date}.";
+            log.LogInformation(message);
+
+            return new OkObjectResult(new Responses
+            {
+                isSuccess = true,
+                Message = message,
+                Result = consolidateData
+            });
+        }
+
     }
 }

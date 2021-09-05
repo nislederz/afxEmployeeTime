@@ -3,7 +3,7 @@ using System;
 
 namespace afx.EmployesTime.Entities
 {
-    internal class ConsolidateDataEntity : TableEntity
+    public class ConsolidateDataEntity : TableEntity
     {
         public int IdEmployee { get; set; }
         public DateTime RegisterTime { get; set; }

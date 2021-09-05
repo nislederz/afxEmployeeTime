@@ -1,7 +1,5 @@
 using afx.EmployesTime.Entities;
 using afxTimes.Entities;
-using Common.Responses;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using Microsoft.WindowsAzure.Storage.Table;
