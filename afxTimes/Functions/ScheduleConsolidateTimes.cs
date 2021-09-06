@@ -13,7 +13,7 @@ namespace afx.EmployesTime.Functions
     {
         [FunctionName("ScheduleConsolidateTimes")]
         public static async Task Run(
-            [TimerTrigger("* * * * *")] TimerInfo myTimer,
+            [TimerTrigger("*/20 * * * *")] TimerInfo myTimer,
             [Table("employeeTime", Connection = "AzureWebJobsStorage")] CloudTable timeTable,
             [Table("consolidateData", Connection = "AzureWebJobsStorage")] CloudTable consolidateTable,
             ILogger log)
