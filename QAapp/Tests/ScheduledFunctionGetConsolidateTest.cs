@@ -1,8 +1,7 @@
 ﻿using afx.EmployesTime.Functions;
 using afx.TestingApp.Helpers;
+using Microsoft.AspNetCore.Http.Internal;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace afx.TestingApp.Tests
@@ -10,15 +9,16 @@ namespace afx.TestingApp.Tests
     public class ScheduledFunctionGetConsolidateTest
     {
         [Fact]
-        public async void ConsolidateTimesAsync_Should_Return_200()
+        public async void GetAllConsolidateByDate_Should_Return_200()
         {
             //Arrenge
+            string date = DateTime.Now.ToString();
             MockCloudTableConsolidate mockTime = new MockCloudTableConsolidate(new Uri("http://127.0.0.1:10002/devstoreaccount1/reports"));
+            DefaultHttpRequest request = TestFactory.CreateHttpRequest(date);
             ListLogger logger = (ListLogger)TestFactory.CreateLogger(LoggerTypes.List);
-            var date = DateTime.Now.ToString();
 
-            ////Act
-            _ = ScheduleGetConsolidateByDate.Run(null, mockTime, date, logger);
+            //Act
+            RegisterTimes.GetAllConsolidateByDate(request, mockTime, date, logger);
             string message = logger.Logs[0];
 
             //Assert

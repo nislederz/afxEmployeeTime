@@ -143,7 +143,7 @@ namespace afx.EmployesTime.Functions
             [Table("employeeTime", Connection = "AzureWebJobsStorage")] CloudTable timeTable,
             ILogger log)
         {
-            log.LogInformation("Get all todos received.");
+            log.LogInformation("Get all employees.");
 
             TableQuery<EmployeesTimeEntity> query = new TableQuery<EmployeesTimeEntity>();
             TableQuerySegment<EmployeesTimeEntity> todos = await timeTable.ExecuteQuerySegmentedAsync(query, null);

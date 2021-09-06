@@ -90,13 +90,14 @@ namespace afx.TestingApp.Tests
             //Arrenge
             MockCloudTableTime mockTime = new MockCloudTableTime(new Uri("http://127.0.0.1:10002/devstoreaccount1/reports"));
             DefaultHttpRequest request = TestFactory.CreateHttpRequest();
+            ListLogger logger = (ListLogger)TestFactory.CreateLogger(LoggerTypes.List);
 
             //Act
-            IActionResult response = await RegisterTimes.GetAllEmployeeTime(request, mockTime, logger);
+            _ = RegisterTimes.GetAllEmployeeTime(request, mockTime, logger);
+            string message = logger.Logs[0];
 
             //Assert
-            OkObjectResult result = (OkObjectResult)response;
-            Assert.Equal(StatusCodes.Status200OK, result.StatusCode);
+            Assert.Contains("Get all employees", message);
         }
 
     }
