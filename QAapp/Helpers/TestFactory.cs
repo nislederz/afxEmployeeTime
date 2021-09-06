@@ -1,4 +1,5 @@
 ﻿using afx.Common.Models;
+using afx.EmployesTime.Entities;
 using afxTimes.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Internal;
@@ -6,9 +7,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
 namespace afx.TestingApp.Helpers
 {
@@ -24,6 +23,19 @@ namespace afx.TestingApp.Helpers
                 Consolidate = false,
                 ETag = "*",
                 PartitionKey = "EMPLOYEETIME",
+                RowKey = Guid.NewGuid().ToString()
+            };
+        }
+
+        public static ConsolidateDataEntity GetConsolidateEntity()
+        {
+            return new ConsolidateDataEntity
+            {
+                IdEmployee = 50,
+                RegisterTime = DateTime.Now,
+                WorkMinutes = 120,
+                ETag = "*",
+                PartitionKey = "CONSOLIDATE",
                 RowKey = Guid.NewGuid().ToString()
             };
         }
@@ -47,6 +59,7 @@ namespace afx.TestingApp.Helpers
                 Path = $"/{employeeId}"
             };
         }
+
         public static DefaultHttpRequest CreateHttpRequest(string date)
         {
             return new DefaultHttpRequest(new DefaultHttpContext())
@@ -93,7 +106,7 @@ namespace afx.TestingApp.Helpers
 
         public static DefaultHttpRequest CreateHttpRequest()
         {
-            return new DefaultHttpRequest(new DefaultHttpContext());
+            return new DefaultHttpRequest(new DefaultHttpContext()) { };
         }
 
         public static EmployeeTime GetTimeRequest()

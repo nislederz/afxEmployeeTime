@@ -5,6 +5,7 @@ using afxTimes.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using System;
 using Xunit;
@@ -77,6 +78,21 @@ namespace afx.TestingApp.Tests
 
             //Act
             IActionResult response =  RegisterTimes.GetEmployeeTimeById(request, timeRequestEntity, timeId.ToString(), logger);
+
+            //Assert
+            OkObjectResult result = (OkObjectResult)response;
+            Assert.Equal(StatusCodes.Status200OK, result.StatusCode);
+        }
+
+        [Fact]
+        public async void GetAllEmployeeTime_Should_Return_200()
+        {
+            //Arrenge
+            MockCloudTableTime mockTime = new MockCloudTableTime(new Uri("http://127.0.0.1:10002/devstoreaccount1/reports"));
+            DefaultHttpRequest request = TestFactory.CreateHttpRequest();
+
+            //Act
+            IActionResult response = await RegisterTimes.GetAllEmployeeTime(request, mockTime, logger);
 
             //Assert
             OkObjectResult result = (OkObjectResult)response;

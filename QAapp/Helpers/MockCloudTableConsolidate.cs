@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace afx.TestingApp.Helpers
 {
-    public class MockCloudTableTime : CloudTable
+    public class MockCloudTableConsolidate : CloudTable
     {
-        public MockCloudTableTime(Uri tableAddress) : base(tableAddress)
+        public MockCloudTableConsolidate(Uri tableAddress) : base(tableAddress)
         {
         }
 
-        public MockCloudTableTime(Uri tableAbsoluteUri, StorageCredentials credentials) : base(tableAbsoluteUri, credentials)
+        public MockCloudTableConsolidate(Uri tableAbsoluteUri, StorageCredentials credentials) : base(tableAbsoluteUri, credentials)
         {
         }
 
-        public MockCloudTableTime(StorageUri tableAddress, StorageCredentials credentials) : base(tableAddress, credentials)
+        public MockCloudTableConsolidate(StorageUri tableAddress, StorageCredentials credentials) : base(tableAddress, credentials)
         {
         }
 
@@ -25,9 +25,8 @@ namespace afx.TestingApp.Helpers
             return await Task.FromResult(new TableResult
             {
                 HttpStatusCode = 200,
-                Result = TestFactory.GetTimeEntity()
+                Result = TestFactory.GetConsolidateEntity()
             });
         }
-
     }
 }
